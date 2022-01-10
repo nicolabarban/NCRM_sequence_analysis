@@ -8,7 +8,7 @@ The course gives an introduction to the theoretical and practical concepts of se
 
 ### Day 1 (20/01/2022)
 
-**9:00-11:00**
+**9:00-11:00[Zoom](https://unibo.zoom.us/j/92861666359?pwd=K2hWc25adk9JQlRYZEc0RHpEdzN1UT09)**
 * Introduction to life course analysis
 * Different approach for life course studies
 * Representation of trajectories as sequences
@@ -25,7 +25,7 @@ The course gives an introduction to the theoretical and practical concepts of se
 
 
 
-**14:00-16:00 (Lab session)**
+**14:00-16:00 (Lab session)[Zoom](https://unibo.zoom.us/j/98328688737?pwd=RWVJUytrTUFaQmhCVE9tb0lQZkJTUT09)**
 
 * Introduction  to RStudio
 * Sequence analysis in R 
@@ -33,14 +33,14 @@ The course gives an introduction to the theoretical and practical concepts of se
 ---
 ### Day 2 (21/01/2022)
 
-**9:00-10:00**
+**9:00-10:00 [Zoom](https://unibo.zoom.us/j/97873746960?pwd=TmFWWDFpSEZzM2pKRWdDVHpvQXZqQT09)**
 
 * Clustering and analysis of clusters
 * Determinants of life course trajectories
 * Analysis of consequences of life course trajectories 
 
 
-**14:00-16:00 (Lab session)**
+**14:00-16:00 (Lab session)  [Zoom](https://unibo.zoom.us/j/92518912061?pwd=RjU4ZSt0Zmc2bDJZWnZZLzNERmdPUT09)**
 * Sequence analysis in R (part 2)
 * Question from students
 
@@ -50,13 +50,17 @@ The course gives an introduction to the theoretical and practical concepts of se
 
 ## Computer software
 
-We will use RStudio and the Package **TraMineR**
+
+* We will use RStudio and the Package **TraMineR**
+* Those who are familiar with RStudio can  download the latest version of the package from CRAN. 
+* Those who have **no previous experience with R** can follow the tutorial using RStudio Cloud (https://rstudio.cloud). Further instructions on how to use Rstudio cloud will be communicated at the beginning of the course. 
+---
 
 ## Online references
 
 * **Sequence Analysis Association (SAA)** https://sequenceanalysis.org
 * **TraMineR R package** http://traminer.unige.ch
-
+---
 ## Suggested Readings
 
 1.	A Aassve, Francesco C Billari, and R Piccarreta. Strings of adulthood: A sequence analysis of young british women’s work-family trajectories. Eur J Population, Jan 2007. 
