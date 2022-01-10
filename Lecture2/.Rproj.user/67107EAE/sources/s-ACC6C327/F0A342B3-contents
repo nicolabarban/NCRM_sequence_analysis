@@ -1,0 +1,46 @@
+---
+title: "Sequence Analysis"
+subtitle: "A (practical) introduction - Lecture 2 -"
+author: "Nicola Barban <br>
+  Alma Mater Studiorum University of  Bologna  "
+date: "20 January 2022<br>
+  ![](img/UniBo-Universita-di-Bologna.png){width=20%}"
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts]
+    yolo: false     
+    highlightLines: true
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      slideNumberFormat: "%current%/%total%"           # 12/42 
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(
+	fig.retina = 3,
+	message = FALSE,
+	warning = FALSE,
+	out.width = "60%",
+	echo=TRUE
+)
+```
+
+<style type="text/css">
+.remark-slide-content {
+    font-size: 26px;
+    padding: 1em 4em 1em 4em;
+}
+</style>
+
+ # Outline
+ 
+1. Basic concepts
+2. Optimal Matching
+3. Other measures
+4. Sequence indicators
+
+---
