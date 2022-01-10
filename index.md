@@ -9,6 +9,8 @@ The course gives an introduction to the theoretical and practical concepts of se
 ### Day 1 (20/01/2022)
 
 **9:00-11:00[Zoom](https://unibo.zoom.us/j/92861666359?pwd=K2hWc25adk9JQlRYZEc0RHpEdzN1UT09)**
+
+### [Slides I](/Lecture1/lecture1.html)
 * Introduction to life course analysis
 * Different approach for life course studies
 * Representation of trajectories as sequences
@@ -17,6 +19,7 @@ The course gives an introduction to the theoretical and practical concepts of se
 
 *(break 15 minutes)*
 
+### [Slides II](/Lecture2/lecture2.pdf)
  * Sequences representations
  * Optimal Matching
  * Other measures

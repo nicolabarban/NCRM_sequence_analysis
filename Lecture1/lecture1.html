@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Sequence Analysis</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Nicola Barban   Alma Mater Studiorum University of Bologna" />
+    <meta name="date" content="2022-01-20" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Sequence Analysis
+## A (practical) introduction - Lecture 1-
+### Nicola Barban <br> Alma Mater Studiorum University of Bologna
+### 20 January 2022<br> <img src="img/UniBo-Universita-di-Bologna.png" style="width:20.0%" />
+
+---
+
+
+
+
+&lt;style type="text/css"&gt;
+.remark-slide-content {
+    font-size: 26px;
+    padding: 1em 4em 1em 4em;
+}
+&lt;/style&gt;
+
+# Your instructor
+
+* Professor of Demography University of Bologna
+* Co-Director ESRC Large centre  MiSoC based at Univesity of Essex
+* Principal investigator ERC Consolidator GENPOP "Genes, Geneaology and the evolution of social Inequality"
+* PhD Statistical Sciences University of Padua, Italy
+* Associate member Nuffield College, Oxford University
+* Research interests on:
+  * Sequence Analysis for social sciences
+  * Methods for demographic research
+  * Sociogenomics
+  * Use of geneaology data in historical demography
+  
+
+---
+# Workshop
+
+---
+# Outline
+
+---
+# Life course paradigm
+
+* The life course paradigm (Elder, 1985, 1994; Giele and Elder, 1998):
+individuals, as human agents, build their future on the basis of the **constraints and opportunities** experienced in the past
+* The process is **iterative and cumulative**, since initial advantages or disadvantages often are amplified with time
+* Life courses are embedded in different time and location affected by the **social context** in which individuals live **life domains are strongly interdependent**.
+
+---
+# Transitions
+
+* A transition is a discrete life change or event within a trajectory (e.g., from single to married).
+* Transitions are often accompanied by socially shared ceremonies and rituals, such as a graduation or a wedding ceremony
+
+&lt;img src="img/laurea.jpg" alt="" class="center"    width="350"  height="350" &gt;
+
+---
+# Trajectories
+* A trajectory can also be envisioned as a sequence of transitions that are enacted over time
+* A trajectory is a sequence of linked states within a conceptually defined range of behavior or experience.
+* A trajectory is a long-term pathway, with age-graded patterns of development in major social institutions such as education or family
+
+
+&lt;img src="img/lifecourse.jpg" alt="" class="center"    width="300"  height="300" &gt;
+---
+# Characteristics of life course data
+
+* Longitudinal data
+* Data collected by panel or retrospective survey
+* occurrence of events, or timing when events happen
+* Multiple domains (e.g. marital status, parenthood, education, work)
+* Some events may not happen -&gt; Observation are often censored
+---
+# Life course analysis
+
+Life course analysis is the statistical analysis of data on:
+1. the **timing** of events (when do events happen?),
+2. their **quantum** (how many events happen?).
+3. and their **sequencing** (in which order do events happen?)
+
+---
+# Event-based vs. Holistic approach
+Two main approaches:
+
+* The event-based approach focuses on events
+    (mostly their timing and quantum)
+* The holistic approach focuses on (parts) of the life course as a whole
+    we focus contemporaneously on timing, quantum and sequences.
+---
+# Event-based approaches
+
+* Event History Analysis (Survival analysis).
+The unit of analysis is time to event. Data can be censored, i.e. we don’t observe the event for all the sample.
+Continuous time Discrete time
+* Panel Data analysis
+---
+# Holistic approaches
+
+* **Sequence analysis**
+* Latent Class Analysis
+* Markov Models
+
+---
+
+# Sequence analysis
+
+* In the 1990s Abbott introduced sequence analysis in the social sciences. Origins in information science and computational biology (DNA) (Abbott, 1995)
+* Life courses are represented in terms of sequences of states (time is intrinsically discrete)
+* As a simple example, we shall consider three states: single (**S**), cohabiting (**C**), married (**M**), in a monthly time scale from age 20 to 24. The sequence representation of an individual life course may thus be: **SSSSSSCCCCCCCSSSSSSSSSSSSSSSSSSSSSSCCCSSSSSSSSSSSMMMMMMMMM**
+
+
+### Sequence analysis is a set of techniques for **describing and analyzing trajectories**
+
+---
+&lt;img src="img/seqs.png" alt="" class="center"    width="750"  height="350" &gt;
+---
+
+# Sequence representation
+
+* Standard representation of a categorical time series **(STS) states-sequence (STS) format**
+*A-A-A-B-B-C-C-C-C-D*
+
+* More compact representations by giving only one of several same successive states (the **Distinct Successive State (DSS) sequence**) :
+*A-A-A-B-B-C-C-C-C-D → A-B-C-D*
+
+---
+# Sequence representation (2)
+
+* To keep time and alignment information successive distinct states are described with their duration (**State Permanence Sequence (SPS) representation**)
+*A-B-C-D → (A,3)-(B,2)-(C,3)-(D,1)*
+
+* Sequences can be described by their starting and ending
+vertical **‘time-stamped-event’ (TSE) format**
+
+| Start | End | State |
+|-------|-----|-------|
+| 1     | 3   | A     |
+| 4     | 5   | B     |
+| 9     | 6   | C     |
+| 10    | 10  | D     |
+     
+---
+# Optimal Matching Analysis (OMA)
+
+Once we construct individual sequences, we need an instrument to measure dissimilarities.
+
+OMA (Optimal Matching Analysis) is a method for the alignment of biosequences, which gives a **similarity measure for each pair of sequences**
+
+OMA operates by transforming a sequence into another one by using three elementary operations:
+
+* **insertion** of a state 
+* **deletion** of a state 
+* **substitution** of a state
+
+Each operation has a “cost”. The distance between two sequences is the minimum total cost of transforming a life into another one.
+---
+class: middle
+# Example
+
+.center[
+| S | A   | T   | U | R   | D | A | Y |                |
+|---|-----|-----|---|-----|---|---|---|----------------|
+| S | ~A~ | ~T~ | U | R   | D | A | Y | *deletion*     |
+| S |     |     | U | *N* | D | A | Y | *substitution* |
+]
+---
+# Distance between categorical time series
+
+**How to compare life trajectories?**
+
+&gt; The **Levenshtein distance** between two strings is defined as the minimum number of edits needed to transform one string into the other, with the allowable edit operations being **insertion**, **deletion**, or **substitution** of a single character. It is named after Vladimir Levenshtein, who considered this distance in 1965.(Wikipedia)
+
+https://phiresky.github.io/levenshtein-demo/
+
+---
+# Optimal Matching
+
+* Andrew Abbott introduce the idea of sequence analysis in social science
+* Great intuition! setting **different substitution costs**. Not all transitions are equal!
+* First applications with costs based on theory
+
+&lt;img src="img/abbottAJS1990.png" alt="Abbott, American Journal of Sociology, 1990" class="centered image"   width="350"  height="350"&gt;
+
+
+---
+
+# Computing distances
+A set that is composed of three basic operations `\(Ω = {ι,δ,σ}\)`,
+1. `\(ι\)` denotes **insertion** (one state is inserted into the sequence)
+2. `\(δ\)` denotes **deletion** (one state is deleted from the sequence)
+3. `\(σ\)` denotes **substitution** (one state is replaced by another
+state).
+
+****
+
+* To each of these elementary operations `\(ω_k ∈ Ω,\)` a specific
+cost can be assigned, `\(c(ω_k)\)`.
+
+
+* If `\(K\)` basic operations must be performed to transform one sequence into another the transformation cost can be computed as `\(c(ω_1,\ldots, ω_K) = \sum^K_{k=1} c(ωk).\)`
+
+
+### The **Matrix of dissimilarities** `\((NxN)\)` includes all the pairwise distances 
+
+---
+# what choice of costs?
+* **substitution costs** can be derived from theory (e.g. occupational prestige, military ranking)
+* using **inverse transition rates** (i.e. rare transitions have "higher costs")
+
+---
+# Computing distance of life courses
+
+The resulting matrix of distance can be directly described (i.e. studying heterogeneity within groups) or used as input for further multivariate analyses, mostly cluster analysis (McVicar and Anyadike-Danes, 2002; Picarreta and Billari, 2007) or multidimensional scaling (Piccarreta and Lior, 2009).
+
+Often we want to classify individuals in groups that share similar life course trajectories.
+
+### Why?
+* Theory
+* Comparative analyses
+* Creating groups for further analyses
+---
+
+# Key stages in a typical sequence analysis
+
+1. describing key sequences by aggregate measures 
+2. visualizing sequences via sequences index plots
+3. comparing sequences via optimal-matching (OM) or alternative techniques (i.e obtaining a dissimilarity matrix)
+4. grouping sequences into clusters via cluster methods
+5. associating patterns with other variables within regression models
+---
+
+# What Questions?
+
+Abbott, 1990 outlines three questions SA can answer
+1. Identify typical sequential patterns
+2. Identify why certain patterns exist (using covariates)
+3. establish what the effects of a given sequential patter have on other outcomes
+
+## Other possible questions include:
+* Study of Heterogeneity in life course
+* Matching individuals with similar trajectories
+---
+# Applications of SA
+
+## Historical data
+* Folk dancer movements (Abbott 1986)
+* 18th century musician careers (Abbott 1990)
+* Analysis of transition to adulthood Dutch cohorts born between 1850 and 1900 (Bras, Liefbroer and Elziga 2010)
+
+---
+# Applications of SA (2)
+
+* **Professional careers** (Blair-Loy, 1990, Mc Vicar Anyadike-Danes, 2002)
+* **Transition to retirement** (Han and Moen, 1999) 
+* **Residential trajectories** (Stovel and Bolan, 2004)
+* **Transportation** (time reference is a day)
+* **Tourism behavior** (space as categories)
+---
+
+&lt;img src="img/geo1.png" alt="" class="centered image"   width="300"  height="350"&gt;
+&lt;img src="img/geo2.png" alt="" class="centered image"   width="300"  height="350"&gt;
+
+.small[Sequence Alignment as a Method for Human Activity Analysis in Space and Time (2007); Shoval and  Isaacson, *Annals of the Association of American Geographers*]
+
+---
+
+
+&lt;img src="img/geo3.png" alt="" class="centered image"   width="650"  height="350"&gt;
+
+---
+# Sequence Analysis and Demography
+
+Sequence analysis have been applied to **demography**
+
+* Transition to adulthood (Billari 2001; Aasve et al., 2007, Mouw, 2005 Sironi et al, 2021)
+* Family and fertility (Billari and Piccarreta, 2005)
+* Work and Family trajectories (Billari and Piccarreta, 2007)
+* Family and health (Barban, 2013)
+
+Previous attempt to study ordering of demographic and sociological events. (Hogan, 1987).
+---
+# Example: the mvad dataset
+
+* Study from McVicar and Anyadike-Danes (2002) on transition from school to work in Northern Ireland
+* 712 individuals
+* Follow-up starting at the end of the compulsory education (July 1993)
+* Time series of 70 status variables: September 1993 to June 1999.
+* The **alphabet** is made of the following statuses: EM (employment), FE (Further Education), HE (Higher Education), JL (Joblessness), SC (School), TR (Training)
+
+---
+# Aim of the study
+
+The aim of the original study was to:
+* Use sequence techniques to characterize young peoples’ transitions from school to work into types
+* Distinguish between successful and unsuccessful transitions
+* Study the association of transition type with individual, family and school characteristics
+* Identify which young people are more at risk to experience unsuccessful transitions into the labour market
+
+---
+# Distribution plot
+
+ 
+&lt;img src="img/seqplot.png" alt="" class="centered image"   width="700"  height="350"&gt;
+---
+
+# First ten common patterns
+
+|                                       | Freq. | Perc. |
+|---------------------------------------|-------|-------|
+| training-employment                   | 53    | 7.4   |
+| employment                            | 40    | 5.6   |
+| employment-FE-employment              | 27    | 3.8   |
+| school-HE                             | 27    | 3.8   |
+| FE-employment                         | 25    | 3.5   |
+| joblessness-FE-employment             | 18    | 2.5   |
+| joblessness-training-employment       | 16    | 2.2   |
+| school-FE-employment                  | 15    | 2.1   |
+| joblessness-FE-joblessness-employment | 11    | 1.5   |
+| school-employment                     | 11    | 1.5   |
+
+---
+# Average time spent in each state
+
+
+ 
+&lt;img src="img/seqmtplot.png" alt="" class="centered image"   width="700"  height="350"&gt;
+
+---
+# Sequence plot
+
+ 
+&lt;img src="img/mvad_I.png" alt="" class="centered image"   width="700"  height="350"&gt;
+---
+# Modal state 
+
+ 
+&lt;img src="img/mvad_ms.png" alt="" class="centered image"   width="700"  height="350"&gt;
+
+---
+---
+# Cluster Analysis
+
+ 
+&lt;img src="img/mvad_clu.png" alt="" class="centered image"   width="700"  height="350"&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"slideNumberFormat": "%current%/%total%"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
