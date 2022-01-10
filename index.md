@@ -47,11 +47,15 @@ The course gives an introduction to the theoretical and practical concepts of se
 ---
 
 
-## Syllabus
 
 ## Computer software
 
+We will use RStudio and the Package **TraMineR**
+
 ## Online references
+
+* **Sequence Analysis Association (SAA)** https://sequenceanalysis.org
+* **TraMineR R package** http://traminer.unige.ch
 
 ## Suggested Readings
 
@@ -84,6 +88,8 @@ using multiple-sequence analysis. J Roy Stat Soc A Sta, 170:167–183, Jan 2007.
 25. Sironi M., N. Barban and R. Impicciatore (2015), “The Role of Parental Social Class in the Transition to Adulthood,” Advances in Life Course Research 26, 89-104
 26.	N Shoval and M Isaacson. Sequence alignment as a method for human activity analysis in space and 
 time. Annals of the Association of American Geographers, 97(2):282–297, 2007. 
+27.  LL Wu. Some comments on” sequence analysis and optimal matching methods in sociology: Review 
+and prospect”. Sociological Methods & Research 29(1):41–64, 2000. 
 
 
 
