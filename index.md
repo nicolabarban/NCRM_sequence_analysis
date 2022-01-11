@@ -8,7 +8,7 @@ The course gives an introduction to the theoretical and practical concepts of se
 
 ### Day 1 (20/01/2022)
 
-**9:00-11:00[Zoom](https://unibo.zoom.us/j/92861666359?pwd=K2hWc25adk9JQlRYZEc0RHpEdzN1UT09)**
+**9:00-11:00 [ Zoom link](https://unibo.zoom.us/j/92861666359?pwd=K2hWc25adk9JQlRYZEc0RHpEdzN1UT09)**
 
 ### [Slides I](/Lecture1/lecture1.html)
 * Introduction to life course analysis
@@ -28,7 +28,7 @@ The course gives an introduction to the theoretical and practical concepts of se
 
 
 
-**14:00-16:00 (Lab session)[Zoom](https://unibo.zoom.us/j/98328688737?pwd=RWVJUytrTUFaQmhCVE9tb0lQZkJTUT09)**
+**14:00-16:00 (Lab session)[ Zoom link ](https://unibo.zoom.us/j/98328688737?pwd=RWVJUytrTUFaQmhCVE9tb0lQZkJTUT09)**
 
 * Introduction  to RStudio
 * Sequence analysis in R 
@@ -36,16 +36,20 @@ The course gives an introduction to the theoretical and practical concepts of se
 ---
 ### Day 2 (21/01/2022)
 
-**9:00-10:00 [Zoom](https://unibo.zoom.us/j/97873746960?pwd=TmFWWDFpSEZzM2pKRWdDVHpvQXZqQT09)**
+**9:00-10:00 [ Zoom link ](https://unibo.zoom.us/j/97873746960?pwd=TmFWWDFpSEZzM2pKRWdDVHpvQXZqQT09)**
 
+### [Slides III](/Lecture3/lecture3.pdf)
+
+### [Barban (2013) Family Trajectories and Health: A Life Course Perspective. European Journal of Population](Barban2013_Article_FamilyTrajectoriesAndHealthALi.pdf)
+### [Pesando et al. (2021) A Sequence-Analysis Approach to the Study of the Transition to Adulthood in Low- and Middle-Income Countries. Population and Development Review ](https://discovery.ucl.ac.uk/id/eprint/10131560/1/padr.12425.pdf)
 * Clustering and analysis of clusters
 * Determinants of life course trajectories
 * Analysis of consequences of life course trajectories 
 
 
-**14:00-16:00 (Lab session)  [Zoom](https://unibo.zoom.us/j/92518912061?pwd=RjU4ZSt0Zmc2bDJZWnZZLzNERmdPUT09)**
+**14:00-16:00 (Lab session)  [ Zoom link](https://unibo.zoom.us/j/92518912061?pwd=RjU4ZSt0Zmc2bDJZWnZZLzNERmdPUT09)**
 * Sequence analysis in R (part 2)
-* Question from students
+* Discussion with students
 
 ---
 

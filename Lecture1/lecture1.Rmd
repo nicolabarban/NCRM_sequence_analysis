@@ -53,8 +53,45 @@ knitr::opts_chunk$set(
 ---
 # Workshop
 
+### Day 1 (20/01/2022)
+
+**9:00-11:00
+
+* Introduction to life course analysis
+* Different approach for life course studies
+* Representation of trajectories as sequences
+* Example of applications
+* Sequence analysis and demography
+
+* *(break 15 minutes)*
+
+ * Sequences representations
+ * Optimal Matching
+ * Other measures
+ * Description of trajectories, indicators 
+ * Graphical representations 
+
+
+
+**14:00-16:00 
+ * Introduction  to RStudio
+ * Sequence analysis in R 
+
 ---
-# Outline
+### Day 2 (21/01/2022)
+
+**9:00-10:00  
+
+* Clustering and analysis of clusters
+* Determinants of life course trajectories
+* Analysis of consequences of life course trajectories 
+
+
+**14:00-16:00 (Lab session) 
+
+* Sequence analysis in R (part 2)
+* Question from students
+
 
 ---
 # Life course paradigm
