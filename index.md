@@ -33,6 +33,7 @@ The course gives an introduction to the theoretical and practical concepts of se
 * Introduction  to RStudio
 * Sequence analysis in R 
 
+### [Code Lab I](SintaxLab1.R)
 ---
 ### Day 2 (21/01/2022)
 
@@ -60,7 +61,7 @@ The course gives an introduction to the theoretical and practical concepts of se
 
 * We will use RStudio and the Package **TraMineR**
 * Those who are familiar with RStudio can  download the latest version of the package from CRAN.
-* Those who have **no previous experience with R** can follow the tutorial using RStudio Cloud (https://rstudio.cloud). Further instructions on how to use Rstudio cloud will be communicated at the beginning of the course. 
+* Those who have **no previous experience with R** can follow the tutorial using [RStudio Cloud](https://rstudio.cloud). Further instructions on how to use Rstudio cloud will be communicated at the beginning of the course. 
 ---
 
 ## Online references
