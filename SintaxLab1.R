@@ -149,7 +149,7 @@ t1
 prop.table(t1, 1)
 prop.table(t1, 2)
 
------
+#-----
 
 data(biofam)
 help(biofam)
@@ -207,17 +207,34 @@ seqfplot(mvad.seq)
 par(mfrow=c(2,2))
 {
 #plot first ten sequences
-seqiplot(mvad.seq,withlegend=F, title="index plot (first ten sequences)" )
+seqiplot(mvad.seq,
+    with.legend=F, 
+    border=NA ,
+    space=0, 
+    main="index plot (first ten sequences)" )
 # ten  most frequent sequences
-seqfplot(mvad.seq,withlegend=F,pbarw=T, title="Sequence frequency plot" )
+seqfplot(mvad.seq,
+    with.legend=F,
+    border=NA ,
+    space=0,
+    pbarw=T, 
+    main="Sequence frequency plot" )
 #state distribution by time
-seqdplot(mvad.seq,withlegend=F, title="State distribution plot" )
+seqdplot(mvad.seq,
+    with.legend=F,
+    border=NA ,
+    space=0,
+    main="State distribution plot" )
 #legend as separate graphic
-seqlegend(mvad.seq, fontsize=1.0)
+
+seqlegend(mvad.seq,
+     cex=.75)
 }
+par(mfrow=c(1,1))
 
 
 
+library(RColorBrewer)
 #colors in the graph
 display.brewer.all()
 cpal(mvad.seq)=brewer.pal(6,"Greys")
@@ -228,7 +245,10 @@ cpal(mvad.seq)=brewer.pal(6,"Accent")
 
 #### Bivariate graphs
 levels(mvad$male)=c("Women", "Men")
-seqdplot(mvad.seq, group=mvad$male)
+seqdplot(mvad.seq,
+ group=mvad$male,
+ border=NA ,
+    space=0)
 
 #average time spent in each state
 seqmtplot(mvad.seq, group=mvad$male)
@@ -257,7 +277,7 @@ seqstatd(mvad.seq[, 1:8])
 
 ###plot for frequent subsequences and plot first 15 most frequent
 mvad.seqe=seqecreate(mvad.seq)
-fsubseq=seqefsub(mvad.seqe, pMinSuppor=0.05,)
+fsubseq=seqefsub(mvad.seqe, pmin.support=0.05,)
 plot(fsubseq[1:15], col="green")
 
 
@@ -269,4 +289,4 @@ dist.om1=seqdist(mvad.seq, method="OM", indel=1, sm=submat)
 
 dist.om1[1:10,1:10]
 
-
+############################################################################################################
