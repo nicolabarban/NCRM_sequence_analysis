@@ -1,0 +1,347 @@
+\documentclass[xcolor=dvipsnames]{beamer} 
+
+ \usepackage{color}
+\colorlet{red}{red!60!black}
+
+\colorlet{color}{yellow!60!black}
+
+\usecolortheme[named=red]{structure}
+
+\usetheme[]{Rochester} 
+\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+%\useoutertheme{umbcfootline}
+\usepackage{amsmath,amssymb}
+\usepackage[english]{babel}
+\usepackage{ifpdf}
+\usepackage{rccol}
+%\usepackage[sectionbib]{chapterbib}
+%\usepackage{beamerfoils} 
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{tabularx}
+\usepackage{rotating}
+\usepackage{longtable}
+\usepackage{color}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{dcolumn}
+\usepackage{soul}
+\usepackage{animate}
+\usepackage{colortbl}
+%\usepackage{amssymb}
+%\usepackage{amsmath,amssymb}
+\usepackage{epstopdf}
+\usepackage[applemac]{inputenc}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage{pdfpages}
+
+\usepackage{makeidx} 
+\usefonttheme{professionalfonts}
+\usepackage[round]{natbib}
+\pgfdeclareimage[width=2cm]{logo}{figures/UniBo-Universita-di-Bologna.png} 
+
+
+\title{Introduction to sequence analysis (Lecture 3). } 
+\subtitle{Clustering and Examples} 
+
+	\author[]{\textbf{Nicola Barban}}
+	\institute{University of Bologna}
+\date{January 20-21 2022}
+\titlegraphic{\pgfuseimage{logo}}
+
+
+\begin{document} 
+	\colorlet{red}{red!60!black}
+		\colorlet{green}{green!60!black}
+			\colorlet{blue}{blue!60!black}
+
+
+\frame{
+\titlepage
+
+}
+    \setbeamercolor{background canvas}{bg=}
+
+\includepdf[pages={2-14}]{./lec3-Clustering.pdf}
+
+\frame{
+\frametitle{Example 2: Family trajectories and Health}
+From:\\
+
+Barban (2013) Family Trajectories and Health: A Life Course Perspective. European Journal of Population
+\textbf{What is the association between family trajectories and  health?\\
+}Lower health outcomes may be  associated with:
+\begin{enumerate}
+	\item Earlier transitions (\emph{timing})
+	\item Number of transitions (\emph{quantum})
+	\item Non-normative transitions (\emph{sequencing})
+\end{enumerate}
+Moreover, there might be some specific \textbf{patterns} of family formation that are associated with lower health outcomes. 
+
+}
+
+
+
+\frame{
+\frametitle{Data}
+\begin{itemize}
+	\item National Longitudinal Study of Adolescent Health \textbf{ (Add Health) }
+	\item Nationally representative sample of U.S. students in grades 7 through 12 in 1994. Cohort born 1976-1982.
+	\item Four waves:  WI 1995; WII 1996; WIII 2001--2002; WIV 2008--2009.  
+	\item Sample size:  20,000 students in wave I 	
+\end{itemize}
+For this study I restrict the sample to women  who are 30 or older at Wave IV. The final sample size is 2,358
+}		
+
+
+\frame{
+\frametitle{Sequences' state space}
+Monthly sequence from age 15 to 30\\
+In each month  individuals can be classified as:\\
+\begin{enumerate}
+	\item Single (S)
+	\item Single Parent (SP)
+	\item Cohabiting (C) 
+	\item Cohabiting parent (CP) 
+	\item Married (M) 
+	\item Married parent (MP)
+	\end{enumerate}
+	
+}
+
+
+\frame{
+\frametitle{Distribution of family states}
+
+\includegraphics[width=4in]{figures/seqdplot.png}
+
+}
+
+\frame{
+
+ \footnotesize
+\begin{table}[h!]
+	\caption{First 10 sequence pattern of transitions in Women 15-30. Weighted frequencies.}
+	\label{seq}
+\begin{center}
+\begin{tabular}{lcc}
+  \toprule
+ && Freq \\ 
+  \hline
+ 1& S-C-M-MP & 11.46 \\ 
+ 2& S-M-MP & 10.46 \\ 
+ 3& S-C-M  & 5.93 \\ 
+ 4& S-C-CP-MP & 4.41 \\ 
+ 5& S  & 4.37 \\ 
+ 6& S-C-S  & 3.46 \\ 
+ 7& S-C-S-C-M-MP & 3.37 \\ 
+ 8& S-M  & 3.15 \\ 
+ 9& S-C & 3.07 \\ 
+ 10& S-SP-CP-MP& 2.77 \\ 
+   \bottomrule
+%\multicolumn{3}{l}{\small{Pattern  representation indicates  the sequence of events with durations $\ge 1$}}
+\end{tabular}
+\end{center}
+\end{table}
+
+}
+
+\frame{
+\frametitle{Data}
+\textbf{Data:} Add-health. Women 30 or older. \\
+\textbf{Health Outcomes:} (continuous vars)
+
+ \begin{itemize}
+	\item Self-reported health
+	\item CES--D Depression scale
+	\item $\#$ cigarettes smoked in the last month
+	\item $\#$ number of episodes of heavy drinking in the last year (5 or more alcoholic cocktails) 
+\end{itemize}
+
+}
+
+\frame{
+\textbf{Independent variables:}\\ 
+\begin{itemize}
+	\item Age at first transition (union, child) (\emph{timing})
+	\item Number of transitions from wave I to wave IV (\emph{quantum})
+	\item Number of non-normative transitions from wave I to wave IV (norm$\rightarrow$ S--M--MP) (\emph{ordering})\\
+	
+	\textbf{Controls:}\\ 
+	\begin{itemize}
+		\item Age, Age sq., Race/Ethnicity, Family composition at Wave I, Parent's education.
+	\end{itemize}
+	
+\end{itemize}
+}
+
+\frame{
+\frametitle{Typologies of trajectories}
+\includegraphics[width=4in]{figures/dist.pdf}
+
+
+}
+
+\frame{
+\frametitle{Typologies of trajectories}
+\includegraphics[width=4in]{figures/mt.png}
+
+
+}
+
+\frame{
+\frametitle{Descriptive statistics}
+\tiny
+\begin{tabular}{{p{2.5cm}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}}}
+ & Married mothers & Late transitions & Married women  & Single Mothers & Cohabiting mothers & Cohabiting women\\
+ \hline
+\multicolumn{7}{c}{\emph{Union status and parenthood}}\\
+Ever married& 1.00 & 0.37 & 1.00 & 0.51 & 0.44 & 0.44  \\
+Ever cohabited & 0.70 & 0.71 & 0.72 & 0.83 & 1.00 & 1.00 \\
+Children & 1.00 & 0.19 & 0.40 & 1.00 & 1.00 & 0.21  \\
+\multicolumn{7}{c}{\emph{ Age at first transitions }}\\
+Age at first transition $<$18 & 0.58 & 0.12 & 0.32 & 0.63 & 0.79 & 0.46  \\
+Age at first transition 19-22  & 0.21 & 0.09 & 0.26 & 0.26 & 0.19 & 0.19 \\
+Age at first transition 23-25  & 0.21 & 0.38 & 0.42 & 0.11 & 0.02 & 0.36 \\
+Age at first transition $>$25 & 0.00 & 0.41 & 0.00 & 0.00 & 0.00 & 0.00  \\
+\multicolumn{7}{c}{\emph{Quantum and sequencing indicators}}\\
+Number of transitions Weave I-IV & 3.37 & 2.41 & 3.14 & 3.89 & 3.79 & 3.32  \\
+Normative transitions & 1.78 & 0.53 & 1.60 & 0.74 & 0.54 & 0.65  \\
+Non-normative transitions & 1.59 & 1.88 & 1.54 & 3.15 & 3.25 & 2.67  \\
+\multicolumn{7}{c}{\emph{Compositional characteristics}}\\
+Proportion Black & 0.1 & 0.18 & 0.06 & 0.34 & 0.31 & 0.14 \\ 
+Parents  with college degree & 0.19 & 0.27 & 0.38 & 0.15 & 0.07 & 0.22 \\ 
+Living with parents & 0.49 & 0.56 & 0.63 & 0.29 & 0.26 & 0.52 \\ 
+Income family W1  ( 1000\$)& 41.54 & 51.92 & 53.52 & 33.38 & 34.59 & 41.73 \\ 
+Sex before 16 & 0.38 & 0.23 & 0.22 & 0.43 & 0.56 & 0.31 \\
+\bottomrule
+\end{tabular}
+%\end{center}
+}
+
+
+\frame{
+\frametitle{Descriptive statistics}
+\tiny
+\begin{tabular}{{p{2.5cm}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}}}
+ & Married mothers & Late transitions & Married women  & Single Mothers & Cohabiting mothers & Cohabiting women\\
+ \hline
+\multicolumn{7}{c}{\emph{Union status and parenthood}}\\
+Ever married& 1.00 & 0.37 & 1.00 & 0.51 & 0.44 & 0.44  \\
+Ever cohabited & 0.70 & 0.71 & 0.72 & 0.83 & 1.00 & 1.00 \\
+Children & 1.00 & 0.19 & 0.40 & 1.00 & 1.00 & 0.21  \\
+\multicolumn{7}{c}{\emph{ Age at first transitions }}\\
+Age at first transition $<$18 & 0.58 & 0.12 & 0.32 & 0.63 & 0.79 & 0.46  \\
+Age at first transition 19-22  & 0.21 & 0.09 & 0.26 & 0.26 & 0.19 & 0.19 \\
+Age at first transition 23-25  & 0.21 & 0.38 & 0.42 & 0.11 & 0.02 & 0.36 \\
+Age at first transition $>$25 & 0.00 & 0.41 & 0.00 & 0.00 & 0.00 & 0.00  \\
+\multicolumn{7}{c}{\emph{Quantum and sequencing indicators}}\\
+Number of transitions Weave I-IV & 3.37 & 2.41 & 3.14 & 3.89 & 3.79 & 3.32  \\
+Normative transitions & 1.78 & 0.53 & 1.60 & 0.74 & 0.54 & 0.65  \\
+Non-normative transitions & 1.59 & 1.88 & 1.54 & 3.15 & 3.25 & 2.67  \\
+\multicolumn{7}{c}{\emph{Compositional characteristics}}\\
+Proportion Black & 0.1 & 0.18 & 0.06 & 0.34 & 0.31 & 0.14 \\ 
+Parents  with college degree & 0.19 & 0.27 & 0.38 & 0.15 & 0.07 & 0.22 \\ 
+Living with parents & 0.49 & 0.56 & 0.63 & 0.29 & 0.26 & 0.52 \\ 
+Income family W1  ( 1000\$)& 41.54 & 51.92 & 53.52 & 33.38 & 34.59 & 41.73 \\ 
+Sex before 16 & 0.38 & 0.23 & 0.22 & 0.43 & 0.56 & 0.31 \\
+\bottomrule
+\end{tabular}
+%\end{center}
+}
+
+
+
+\frame{
+\frametitle{Descriptive statistics (2)}
+\tiny
+\begin{center}
+	\begin{tabular}{{p{2.5cm}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}}}
+	\toprule
+ & Married mothers & Late transitions & Married women  & Single Mothers & Cohabiting mothers & Cohabiting women\\
+ \hline
+\multicolumn{7}{c}{\emph{Health status at Weave I}}\\
+Prop. in poor health at WI &   0.10 & 0.08 & 0.07 & 0.16 & 0.10 & 0.14 \\
+Prop. with depression symptoms at WI   & 0.25 & 0.23 & 0.22 & 0.28 & 0.29 & 0.35 \\
+Smoking at WI &   0.39 & 0.42 & 0.35 & 0.42 & 0.50 & 0.46 \\
+Heavy drinking at Weave I  & 0.34 & 0.39 & 0.34 & 0.31 & 0.32 & 0.47 \\
+\multicolumn{7}{c}{\emph{Health status at Weave IV}}\\
+Prop. in poor health at WIV   & 0.09 & 0.08 & 0.10 & 0.13 & 0.12 & 0.14 \\
+Prop. with depression symptoms at WIV  & 0.16 & 0.15 & 0.13 & 0.17 & 0.26 & 0.23 \\
+Smoking at WIV   & 0.30 & 0.29 & 0.20 & 0.39 & 0.43 & 0.37 \\
+Heavy drinking at WIV   & 0.29 & 0.43 & 0.38 & 0.33 & 0.35 & 0.52 \\
+\bottomrule
+\end{tabular}
+\end{center}
+}
+
+
+\frame{
+\frametitle{Methods }
+Lagged dependent variable model\\
+\begin{equation}
+	Y_{i2}=\gamma D_i+ \rho Y_{i1}+\beta_i X_{i1} +\epsilon_i2
+\end{equation}
+where:
+\begin{itemize}
+	\item $Y_{i2}$ is vector of health indicators measured at Wave IV (Time 2)
+	\item $Y_{i1}$ represents a vector of identical health measures at Wave I (Time 1)
+	 \item  $D_i$ represents the characteristics of the sequence from Wave I to Wave IV. 
+	\item $X_{i1}$  a vector of demographic controls and SES background at Wave I (race; parents' education; )
+\end{itemize}
+}
+
+\frame{
+\frametitle{Results (2)}
+	\begin{center}
+	\begin{tiny}
+
+		
+\begin{tabular}{lllll}
+\toprule
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+   &\multicolumn{1}{c}{Poor}\\                 &\multicolumn{1}{c}{Health}&\multicolumn{1}{c}{Depression}&\multicolumn{1}{c}{Smoking}&\multicolumn{1}{c}{Drinking}\\
+\midrule
+\emph{Late transitions (ref. category)}\\
+\\
+Married mother w/o cohabitation&       0.105         &      -0.053         &      -0.053         &      -0.715\sym{***}\\
+                    &     (0.067)         &     (0.185)         &     (0.194)         &     (0.171)         \\
+\addlinespace
+Married women w/o cohabitation&       0.086         &       0.091         &      -0.416         &      -0.343         \\
+                    &     (0.076)         &     (0.242)         &     (0.255)         &     (0.203)         \\
+\addlinespace
+Single mothers      &       0.233\sym{**} &      -0.047         &       0.409         &      -0.370         \\
+                    &     (0.087)         &     (0.262)         &     (0.238)         &     (0.231)         \\
+\addlinespace
+Cohabiting mothers w/o marriage&       0.196\sym{*}  &       0.672\sym{*}  &       0.402         &      -0.258         \\
+                    &     (0.092)         &     (0.325)         &     (0.242)         &     (0.252)         \\
+\addlinespace
+Cohabitation w/o children&       0.234\sym{*}  &       0.744\sym{*}  &       0.257         &       0.265         \\
+ 
+                 &     (0.114)         &     (0.317)         &     (0.349)         &     (0.266)         \\
+\midrule  
+Self-reported health at wave I&       0.250\sym{***}&       0.099         &       0.077         &       0.022         \\
+                    &     (0.030)         &     (0.083)         &     (0.083)         &     (0.074)         \\
+\addlinespace
+Depression WI       &       0.021\sym{***}&       0.144\sym{***}&       0.003         &      -0.030\sym{*}  \\
+                    &     (0.006)         &     (0.016)         &     (0.018)         &     (0.014)         \\
+\addlinespace
+Smoking at wave I   &       0.084         &       0.099         &       1.952\sym{***}&       0.422\sym{**} \\
+                    &     (0.055)         &     (0.174)         &     (0.158)         &     (0.145)         \\
+\addlinespace
+Drinking at wave I  &      -0.079         &       0.014         &       0.196         &       0.921\sym{***}\\
+                    &     (0.054)         &     (0.162)         &     (0.159)         &     (0.140)         \\
+\emph{Controls}            &  \emph{yes}     &      \emph{yes}       &    \emph{yes}         &     \emph{yes}         \\
+\bottomrule
+
+\end{tabular}
+		\end{tiny}
+	\end{center}
+		}
+		
+
+\end{document}
+
+		
+
