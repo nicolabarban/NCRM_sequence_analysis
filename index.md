@@ -1,4 +1,4 @@
-![](Fig4.eps)
+![](fg_bfseqtree.jpg)
 
 # Introduction to sequence analysis for social sciences
 ## 20-21 January 2022
