@@ -87,7 +87,7 @@ list.files()
 
 # Now we will read our first data file.
 
-data_DHS <- read.csv(file="http://nicolabarban.com/sequence_analysis/data_EE.csv", header=TRUE)
+data_DHS <- read.csv(file="http://nicolabarban.com/NCRM_sequence_analysis/DataLab1.csv", header=TRUE)
 
 # We have created a "data.frame" called mvad.
 is.data.frame(data_DHS)
