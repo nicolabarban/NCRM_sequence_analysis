@@ -1,3 +1,5 @@
+![](fg_bfseqtree.jpg)
+
 # Introduction to sequence analysis for social sciences
 ## 20-21 January 2022
 
@@ -34,6 +36,7 @@ The course gives an introduction to the theoretical and practical concepts of se
 * Sequence analysis in R 
 
 ### [Code Lab I](SintaxLab1.R)
+### [Data](DataLab1.csv)
 ---
 ### Day 2 (21/01/2022)
 
@@ -49,6 +52,9 @@ The course gives an introduction to the theoretical and practical concepts of se
 
 
 **14:00-16:00 (Lab session)  [ Zoom link](https://unibo.zoom.us/j/92518912061?pwd=RjU4ZSt0Zmc2bDJZWnZZLzNERmdPUT09)**
+
+### [Code Lab II](SintaxLab2.R)
+
 * Sequence analysis in R (part 2)
 * Discussion with students
 
@@ -60,8 +66,7 @@ The course gives an introduction to the theoretical and practical concepts of se
 
 
 * We will use RStudio and the Package **TraMineR**
-* Those who are familiar with RStudio can  download the latest version of the package from CRAN.
-* Those who have **no previous experience with R** can follow the tutorial using [RStudio Cloud](https://rstudio.cloud). Further instructions on how to use Rstudio cloud will be communicated at the beginning of the course. 
+* Those who are familiar with RStudio can  download the latest version of the package from CRAN. Who has **no previous experience with R** can follow the tutorial using [RStudio Cloud](https://rstudio.cloud). Further instructions on how to use Rstudio cloud will be communicated at the beginning of the course. 
 ---
 
 ## Online references
