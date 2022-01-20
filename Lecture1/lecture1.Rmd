@@ -55,25 +55,22 @@ knitr::opts_chunk$set(
 
 ### Day 1 (20/01/2022)
 
-**9:00-11:00
+9:00-11:00
 
 * Introduction to life course analysis
 * Different approach for life course studies
-* Representation of trajectories as sequences
-* Example of applications
-* Sequence analysis and demography
+* Sequences representations
+* Optimal Matching
+* Other measures
+* Description of trajectories, indicators 
+* Graphical representations 
 
-* *(break 15 minutes)*
+---
+# Workshop
 
- * Sequences representations
- * Optimal Matching
- * Other measures
- * Description of trajectories, indicators 
- * Graphical representations 
+### Day 1 (20/01/2022)
 
-
-
-**14:00-16:00 
+14:00-16:00 
  * Introduction  to RStudio
  * Sequence analysis in R 
 
@@ -81,14 +78,11 @@ knitr::opts_chunk$set(
 ### Day 2 (21/01/2022)
 
 **9:00-10:00  
-
 * Clustering and analysis of clusters
 * Determinants of life course trajectories
 * Analysis of consequences of life course trajectories 
 
-
-**14:00-16:00 (Lab session) 
-
+14:00-16:00 (Lab session) 
 * Sequence analysis in R (part 2)
 * Question from students
 
@@ -137,17 +131,17 @@ Life course analysis is the statistical analysis of data on:
 # Event-based vs. Holistic approach
 Two main approaches:
 
-* The event-based approach focuses on events
+* The **event-based** approach focuses on events
     (mostly their timing and quantum)
-* The holistic approach focuses on (parts) of the life course as a whole
+* The **holistic** approach focuses on (parts) of the life course as a whole
     we focus contemporaneously on timing, quantum and sequences.
 ---
 # Event-based approaches
 
-* Event History Analysis (Survival analysis).
+* **Event History Analysis** (Survival analysis).
 The unit of analysis is time to event. Data can be censored, i.e. we don’t observe the event for all the sample.
 Continuous time Discrete time
-* Panel Data analysis
+* **Panel Data analysis**
 ---
 # Holistic approaches
 
