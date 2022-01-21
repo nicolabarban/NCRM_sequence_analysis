@@ -7,6 +7,7 @@
 # --------------------------------------------------------------------
 
 #### loading traminer package. 
+install.package("TraMineR")
 library(TraMineR)
 data(mvad)
 
