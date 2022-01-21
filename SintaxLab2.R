@@ -20,7 +20,14 @@ mvad.scode=c("EM","FE", "HE", "JL", "SC", "TR")
 
 ####################################
 #create sequence object WEIGHTED
-mvad.seq=seqdef(mvad,15:86,states=mvad.scode, labels=mvad.labels, weights=mvad$weight )
+library(RColorBrewer)
+
+mvad.seq<-seqdef(mvad,
+                15:86,
+                states=mvad.scode,
+                labels=mvad.labels, 
+                weights=mvad$weight,
+                cpal=brewer.pal(6,"Set1"))
 
 alphabet(mvad.seq)
 stlab(mvad.seq)
@@ -103,14 +110,12 @@ mvad.cl4 = cutree(mvad.clusterward, k = 4)
 mvad.cl4[1:10]
 
 
-## Cluster 1 EM dominated
-## Cluster 2 HE dominated
-## Cluster 3 FE Dominated
-## Cluster 4 Long  training
-## Cluster 5 HE dominated
+
 ###########
 
 seqdplot(mvad.seq, group=mvad.cl4, border=NA, space=0)
+seqmtplot(mvad.seq, group=mvad.cl4, border=NA, space=0)
+
 levels(mvad.cl4)=c(" EM dominated", "HE dominated", "FE dominated", "Joblessness dominated")
 seqdplot(mvad.seq, group=mvad.cl4, border=NA, space=0, main=levels(mvad.cl4))
 
